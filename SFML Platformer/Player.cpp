@@ -137,11 +137,23 @@ void Player::Update(Level world, View view) {
 		Packet packet;
 		string command = "move " + to_string(sprite.getPosition().x) + " " + to_string(sprite.getPosition().y);
 		packet.append(command.c_str(), command.size());
+
 		socket.send(packet, address, SEND_PORT);
+
 		cout << "Data sent" << endl;
 	} // else no data needs to be sent
 
 	// receive data
+	char response[1024];
+	size_t received = 0;
+	unsigned short port;
+
+	IpAddress sender;
+	socket.setBlocking(false);
+	socket.receive(response, 1024, received, sender, port);
+	string message(response, received);
+
+	cout << "INFO: Player received message: " << message << endl;
 	#pragma endregion
 
 	lastPosition = sprite.getPosition();

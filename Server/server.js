@@ -9,7 +9,7 @@ var players = []; // players;
 server.on("message", function (message, information) {
     var params = message.toString().split(" ");
 
-    switch (params[0]) {
+    switch (params[0]) { // 0th term is command
         case "join":
             var currentPlayer = new Player(parseInt(params[1]), parseInt(params[2]));
 
@@ -30,7 +30,18 @@ server.on("message", function (message, information) {
 
             break;
 
-            case "move":
+        case "move":
+            var id = parseInt(params[1], 10);
+
+            var x = parseInt(params[2], 10);
+            var y = parseInt(params[3], 10);
+
+            players[id].x = x;
+            players[id].y = y;
+
+            console.log("INFO: Data received from player " + id + " move to " + x + " " + y);
+
+            break;
     }
 });
 
