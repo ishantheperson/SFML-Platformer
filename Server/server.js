@@ -7,6 +7,8 @@ console.log("Socket created\n");
 var players = []; // players;
 
 server.on("message", function (message, information) {
+    if (information.size == 4) { return; }
+    console.log("INFO: Received message: " + message);
     var params = message.toString().split(" ");
 
     switch (params[0]) { // 0th term is command

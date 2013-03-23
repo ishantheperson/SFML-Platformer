@@ -144,16 +144,16 @@ void Player::Update(Level world, View view) {
 	} // else no data needs to be sent
 
 	// receive data
-	char response[1024];
-	size_t received = 0;
-	unsigned short port;
+	//char response[1024];
+	//size_t received = 0;
+	//unsigned short port;
 
-	IpAddress sender;
-	socket.setBlocking(false);
-	socket.receive(response, 1024, received, sender, port);
-	string message(response, received);
+	//IpAddress sender;
+	//socket.setBlocking(false);
+	//socket.receive(response, 1024, received, sender, port);
+	//string message(response, received);
 
-	cout << "INFO: Player received message: " << message << endl;
+	//cout << "INFO: Player received message: " << message << endl;
 	#pragma endregion
 
 	lastPosition = sprite.getPosition();
