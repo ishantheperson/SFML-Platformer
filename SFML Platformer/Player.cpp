@@ -3,6 +3,7 @@
 
 
 Player::Player(string name, Vector2f position, int direction) {
+	#pragma region Sprite
 	cout << "INFO: Created new DrawableGameObject w/ normal constructor" << endl;
 	if (!texture.loadFromFile("res/image/" + name)) {
 		cout << "WARNING: could not load image " << name << endl;
@@ -14,6 +15,16 @@ Player::Player(string name, Vector2f position, int direction) {
 
 	this -> direction = direction;
 	loaded = true;
+	#pragma endregion
+
+	#pragma region Network
+	IpAddress address("127.0.0.1");
+	UdpSocket socket;
+	Packet packet;
+
+	packet.append("message" , strlen("message"));
+	socket.send(packet, address, 9000);
+	#pragma endregion
 }
 
 void Player::Update(Level world, View view) {
@@ -93,5 +104,9 @@ void Player::Update(Level world, View view) {
 			velocity = 0;
 		}
 	}
+	#pragma endregion
+	#pragma region Network
+	// send data to server
+	// receive data
 	#pragma endregion
 }

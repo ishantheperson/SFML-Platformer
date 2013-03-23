@@ -15,6 +15,12 @@ build/
 [Bb]in/
 [Oo]bj/
 
+*.obj
+*.exe
+
+# Node.js Visual Document
+nodelib/
+
 # MSTest test Results
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*

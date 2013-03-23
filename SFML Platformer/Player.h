@@ -2,6 +2,7 @@
 
 #include "stdafx.h"
 #include "DrawableGameObject.h"
+#include <SFML/Network.hpp>
 
 using namespace std;
 using namespace sf;
@@ -18,5 +19,8 @@ class Player : public DrawableGameObject
 		void Update(Level level, View view);
 	private:
 		float velocity;
+		IpAddress address;
+		UdpSocket socket;
+		Packet packet;
 };
 

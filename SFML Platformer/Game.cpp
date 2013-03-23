@@ -7,7 +7,6 @@ void Game::Start() {
 	gameWindow.setFramerateLimit(MAX_FRAMERATE);
 	gameWindow.setView(view);
 
-	Player player("player.png", level.startLocation, RIGHT);
 	cout << "Player initialized at X: " << level.startLocation.x << " Y: " << level.startLocation.y << endl;
 
 	Loop();
@@ -35,7 +34,6 @@ void Game::Loop() {
 			gameObjects[i] -> Update();
 			gameObjects[i] -> Draw(gameWindow);
 		}
-
 
 		level.Draw(gameWindow);
 
