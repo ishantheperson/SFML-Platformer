@@ -3,6 +3,8 @@
 
 using namespace std;
 
+// #define LEVEL_DEBUG
+
 Level::Level(string name) {
 	if (!(grass.loadFromFile("res/image/blocks/grass.png") && dirt.loadFromFile("res/image/blocks/dirt.png"))) {
 		cout << "ERROR: Unable to load blocks" << endl;
@@ -27,25 +29,35 @@ void Level::InitializeBlocks() {
 	for (unsigned int x = 0; x < level.getSize().x; x++) {
 		for (unsigned int y = 0; y < level.getSize().y; y++) {
 			Color pixel = level.getPixel(x, y);
-			cout << "INFO: Scanning block at at X:" << x << " Y: " << y << endl;
+#ifdef LEVEL_DEBUG
+			cout << "INFO: Scanning block at X:" << x << " Y: " << y << endl;
+#endif
 			if (pixel == AIR) {
+#ifdef LEVEL_DEBUG
 				cout << "INFO: Found air block at X:" << x << " Y: " << y << endl;
+#endif
 				blocks.push_back(new DrawableGameObject);
 				airAmount += 1;	
 			}
 			else if (pixel == GRASS) {
+#ifdef LEVEL_DEBUG
 				cout << "INFO: Found grass block at X:" << x << " Y: " << y << endl;
+#endif
 				blocks.push_back(new DrawableGameObject(grass, new Vector2f(x * 100, y * 100)));
 				grassAmount += 1;
 			}
 			else if (pixel == DIRT) {
+#ifdef LEVEL_DEBUG
 				cout << "INFO: Found dirt block at X:" << x << " Y: " << y << endl;
+#endif
 				blocks.push_back(new DrawableGameObject(dirt, new Vector2f(x * 100, y * 100)));
 				dirtAmount += 1;
 			}
 			else if (pixel == PLAYER_START) {
 				blocks.push_back(new DrawableGameObject);
+#ifdef LEVEL_DEBUG
 				cout << "INFO: Found level start at X:" << x << " Y: " << y << endl;
+#endif
 				startLocation = Vector2f(x * 100 + 50, y * 100 + 50);
 			}
 			else {
@@ -54,9 +66,11 @@ void Level::InitializeBlocks() {
 		}
 	}
 
+#ifdef LEVEL_DEBUG
 	cout << "INFO: Found " << grassAmount << " grass blocks" << endl;
 	cout << "INFO: Found " << dirtAmount << " dirt blocks" << endl;
 	cout << "INFO: Found " << airAmount << " air blocks" << endl;
+#endif
 }
 
 void Level::Draw(RenderWindow & window) {
@@ -70,7 +84,7 @@ bool Level::Collides(FloatRect source) {
 	for (vector<DrawableGameObject*>::iterator i = blocks.begin(); i != blocks.end(); ++i) {
 		if (((*i) -> loaded) == true) {
 			if ((*i) -> sprite.getGlobalBounds().intersects(source)) {
-				return true;  cout << "INFO: Collision" << endl;
+				return true; 
 			} 
 		}
 	}

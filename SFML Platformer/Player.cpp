@@ -1,9 +1,9 @@
 #include "stdafx.h"
 #include "Player.h"
 
-
 Player::Player(string name, Vector2f position, int direction) {
 	#pragma region Sprite
+	Sprite sprite;
 	cout << "INFO: Created new DrawableGameObject w/ normal constructor" << endl;
 	if (!texture.loadFromFile("res/image/" + name)) {
 		cout << "WARNING: could not load image " << name << endl;
@@ -15,15 +15,41 @@ Player::Player(string name, Vector2f position, int direction) {
 
 	this -> direction = direction;
 	loaded = true;
+
+	this -> lastPosition = position;
+
 	#pragma endregion
 
 	#pragma region Network
 	IpAddress address("127.0.0.1");
 	UdpSocket socket;
+	socket.setBlocking(true);
+	socket.bind(RECEIVE_PORT);
+
 	Packet packet;
 
-	packet.append("message" , strlen("message"));
-	socket.send(packet, address, 9000);
+	string command = "join " + to_string(sprite.getPosition().x) + " " + to_string(sprite.getPosition().y);
+
+	packet.append(command.c_str(), command.size());
+	socket.send(packet, address, SEND_PORT);
+
+	char response[1024];
+	size_t received = 0;
+	unsigned short port;
+
+	IpAddress sender;
+
+	cout << "INFO: Receiving message..." << endl;
+	socket.receive(response, 1024, received, sender, port);
+	cout << "INFO: Received message." << endl;
+
+	string message(response, received);
+	cout << "INFO: Player received message: " << message << endl;
+	id = atoi(message.c_str());
+
+	// after initial connection do not block
+	socket.setBlocking(false);
+
 	#pragma endregion
 }
 
@@ -53,7 +79,6 @@ void Player::Update(Level world, View view) {
 	groundCollisionRect.width -= 10;
 	groundCollisionRect.left += 5;
 	
-
 	if (right && !(world.Collides(rightCollisionRect))) {
 		if (direction == LEFT) {
 			Flip(); 
@@ -107,6 +132,22 @@ void Player::Update(Level world, View view) {
 	#pragma endregion
 	#pragma region Network
 	// send data to server
+	if (lastPosition != sprite.getPosition()) {
+		cout << "Sending data..." << endl;
+		Packet packet;
+		string command = "move " + to_string(sprite.getPosition().x) + " " + to_string(sprite.getPosition().y);
+		packet.append(command.c_str(), command.size());
+		socket.send(packet, address, SEND_PORT);
+		cout << "Data sent" << endl;
+	} // else no data needs to be sent
+
 	// receive data
 	#pragma endregion
+
+	lastPosition = sprite.getPosition();
+}
+
+ostream& operator<< (ostream& stream, const Player& player) {
+	stream << player.sprite.getPosition().x << ' ' << player.sprite.getPosition().y;
+	return stream;
 }

@@ -1,8 +1,23 @@
-﻿Build started 3/22/2013 9:13:56 PM.
+﻿Build started 3/23/2013 3:26:14 PM.
      1>Project "C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\SFML Platformer.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\SFML Platformer.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Game.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\SFML Platformer.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\SFML Platformer.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt DrawableGameObject.cpp Fade.cpp Game.cpp GameObject.cpp Level.cpp Player.cpp ScrollingBackground.cpp main.cpp
+         Player.cpp
+     1>c:\users\ishan\documents\github\sfml-platformer\sfml platformer\player.cpp(13): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
+         Level.cpp
+     1>c:\users\ishan\documents\github\sfml-platformer\sfml platformer\level.cpp(46): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\users\ishan\documents\github\sfml-platformer\sfml platformer\level.cpp(53): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\users\ishan\documents\github\sfml-platformer\sfml platformer\level.cpp(61): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
+         Generating Code...
+         Skipping... (no relevant changes detected)
+         main.cpp
+         ScrollingBackground.cpp
+         GameObject.cpp
          Game.cpp
+         Fade.cpp
+         DrawableGameObject.cpp
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Ishan\Documents\GitHub\SFML-Platformer\Debug\SFML Platformer.exe" /INCREMENTAL /NOLOGO "sfml-audio-d.lib" "sfml-graphics-d.lib" "sfml-main-d.lib" "sfml-network-d.lib" "sfml-system-d.lib" "sfml-window-d.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Ishan\Documents\GitHub\SFML-Platformer\Debug\SFML Platformer.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Ishan\Documents\GitHub\SFML-Platformer\Debug\SFML Platformer.lib" /MACHINE:X86 Debug\DrawableGameObject.obj
          Debug\Fade.obj
@@ -18,4 +33,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.54
+Time Elapsed 00:00:01.86

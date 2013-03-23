@@ -11,16 +11,23 @@ using namespace sf;
 #define JUMP_HEIGHT 20
 #define SPEED 2
 
+#define SEND_PORT 9000
+#define RECEIVE_PORT 9001
+
 class Player : public DrawableGameObject
 {
 	public:
 		Player (string name, Vector2f position, int direction);
-
 		void Update(Level level, View view);
+
+		friend ostream& operator<<(ostream& stream, const Player& player);
 	private:
 		float velocity;
+		Vector2f lastPosition;
+
 		IpAddress address;
 		UdpSocket socket;
 		Packet packet;
+		int id;
 };
 
