@@ -133,6 +133,8 @@ void Player::Update(Level world, View view) {
 	#pragma region Network
 	// send data to server
 	if (lastPosition != sprite.getPosition()) {
+		UdpSocket socket;
+		socket.setBlocking(false);
 		cout << "Sending data..." << endl;
 		Packet packet;
 		string command = "move " + to_string(sprite.getPosition().x) + " " + to_string(sprite.getPosition().y);
