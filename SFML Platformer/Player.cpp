@@ -1,6 +1,15 @@
 #include "stdafx.h"
 #include "Player.h"
 
+#define GRAVITY 5
+#define JUMP_HEIGHT 20
+#define SPEED 2
+
+#define PORT 9000
+#define LISTEN_PORT 9001
+#define ADDRESS "127.0.0.1"
+#define BUFFER_SIZE 1024
+
 Player::Player(string name, Vector2f position, int direction) {
 	#pragma region Sprite
 	Sprite sprite;
@@ -21,19 +30,18 @@ Player::Player(string name, Vector2f position, int direction) {
 	#pragma endregion
 
 	#pragma region Network
-	IpAddress address("127.0.0.1");
-	UdpSocket socket;
-	socket.setBlocking(true);
-	socket.bind(RECEIVE_PORT);
+	address = new IpAddress(ADDRESS);
+	this -> socket.setBlocking(true);
+	socket.bind(LISTEN_PORT);
 
 	Packet packet;
 
 	string command = "join " + to_string(sprite.getPosition().x) + " " + to_string(sprite.getPosition().y);
 
 	packet.append(command.c_str(), command.size());
-	socket.send(packet, address, SEND_PORT);
+	socket.send(packet, *address, PORT);
 
-	char response[1024];
+	char response[BUFFER_SIZE];
 	size_t received = 0;
 	unsigned short port;
 
@@ -48,10 +56,13 @@ Player::Player(string name, Vector2f position, int direction) {
 	id = atoi(message.c_str());
 
 	// after initial connection do not block
-	socket.setBlocking(false);
+	
+	// socket.setBlocking(false);
 
 	#pragma endregion
 }
+
+Player::~Player() { }
 
 void Player::Update(Level world, View view) {
 	#pragma region Movement
@@ -133,29 +144,29 @@ void Player::Update(Level world, View view) {
 	#pragma region Network
 	// send data to server
 	if (lastPosition != sprite.getPosition()) {
-		UdpSocket socket;
 		socket.setBlocking(false);
 		cout << "Sending data..." << endl;
 		Packet packet;
-		string command = "move " + to_string(sprite.getPosition().x) + " " + to_string(sprite.getPosition().y);
+		string command = "move " + to_string(id) + " " + to_string(sprite.getPosition().x) + " " + to_string(sprite.getPosition().y);
 		packet.append(command.c_str(), command.size());
 
-		socket.send(packet, address, SEND_PORT);
+		socket.send(packet, *address, PORT);
 
 		cout << "Data sent" << endl;
 	} // else no data needs to be sent
 
 	// receive data
-	//char response[1024];
-	//size_t received = 0;
-	//unsigned short port;
+	char response[BUFFER_SIZE];
+	size_t received = 0;
+	unsigned short port;
 
-	//IpAddress sender;
-	//socket.setBlocking(false);
-	//socket.receive(response, 1024, received, sender, port);
-	//string message(response, received);
+	IpAddress sender;
+	socket.setBlocking(false);
+	socket.receive(response, 1024, received, sender, port);
 
-	//cout << "INFO: Player received message: " << message << endl;
+	string message(response, received);
+
+	if (message.length() > 0) { cout << "INFO: Player received message: " << message << endl; }
 	#pragma endregion
 
 	lastPosition = sprite.getPosition();

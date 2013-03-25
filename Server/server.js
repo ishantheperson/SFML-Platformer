@@ -1,14 +1,20 @@
 /// <reference path="./nodelib/node.js">
+
+var port = 9000;
+
 var dgram = require('dgram');
 var server = dgram.createSocket('udp4');
 
 console.log("Socket created\n");
 
-var players = []; // players;
+function Player(x, y) {
+    this.x = x || 0;
+    this.y = y || 0;
+}
+
+var players = []; // connected players
 
 server.on("message", function (message, information) {
-    if (information.size == 4) { return; }
-    console.log("INFO: Received message: " + message);
     var params = message.toString().split(" ");
 
     switch (params[0]) { // 0th term is command
@@ -30,6 +36,8 @@ server.on("message", function (message, information) {
                 }
             });
 
+            // broadcast mesage to others
+
             break;
 
         case "move":
@@ -44,12 +52,16 @@ server.on("message", function (message, information) {
             console.log("INFO: Data received from player " + id + " move to " + x + " " + y);
 
             break;
+
+        case "disconnect":
+
+            break;
+
+        default:
+            console.log("WARNING: Cannot handle message " + message.toString() + " from " + information.address);
+            break;
     }
 });
 
-server.bind(9000);
-
-function Player(x, y) {
-    this.x = x || 0;
-    this.y = y || 0;
-}
+server.bind(port);
+console.log("Server listening on port " + port);
