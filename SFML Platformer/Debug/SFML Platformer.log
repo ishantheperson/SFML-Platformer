@@ -1,9 +1,26 @@
-﻿Build started 3/24/2013 9:02:30 PM.
-     1>Project "C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\SFML Platformer.vcxproj" on node 2 (Build target(s)).
+﻿Build started 3/24/2013 10:24:15 PM.
+     1>Project "C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\SFML Platformer.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\SFML Platformer.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Player.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\SFML Platformer.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\SFML Platformer.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt DrawableGameObject.cpp Fade.cpp Game.cpp GameObject.cpp Level.cpp main.cpp Player.cpp ScrollingBackground.cpp
+         ScrollingBackground.cpp
          Player.cpp
-     1>c:\users\ishan\documents\github\sfml-platformer\sfml platformer\player.cpp(13): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\users\ishan\documents\github\sfml-platformer\sfml platformer\player.cpp(22): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
+         main.cpp
+         Level.cpp
+     1>c:\users\ishan\documents\github\sfml-platformer\sfml platformer\level.cpp(44): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\users\ishan\documents\github\sfml-platformer\sfml platformer\level.cpp(51): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\users\ishan\documents\github\sfml-platformer\sfml platformer\level.cpp(59): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
+         GameObject.cpp
+         Game.cpp
+     1>c:\users\ishan\documents\github\sfml-platformer\sfml platformer\game.cpp(8): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\time.inl(112) : see declaration of 'localtime'
+     1>c:\users\ishan\documents\github\sfml-platformer\sfml platformer\game.cpp(11): warning C4996: 'asctime': This function or variable may be unsafe. Consider using asctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\time.h(153) : see declaration of 'asctime'
+         Fade.cpp
+         DrawableGameObject.cpp
+         Generating Code...
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Ishan\Documents\GitHub\SFML-Platformer\Debug\SFML Platformer.exe" /INCREMENTAL /NOLOGO "sfml-audio-d.lib" "sfml-graphics-d.lib" "sfml-main-d.lib" "sfml-network-d.lib" "sfml-system-d.lib" "sfml-window-d.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Ishan\Documents\GitHub\SFML-Platformer\Debug\SFML Platformer.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Ishan\Documents\GitHub\SFML-Platformer\Debug\SFML Platformer.lib" /MACHINE:X86 Debug\DrawableGameObject.obj
          Debug\Fade.obj
@@ -15,8 +32,8 @@
          Debug\ScrollingBackground.obj
          Debug\stdafx.obj
          SFML Platformer.vcxproj -> C:\Users\Ishan\Documents\GitHub\SFML-Platformer\Debug\SFML Platformer.exe
-     1>Done Building Project "C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\SFML Platformer.vcxproj" (Build target(s)).
+     1>Done Building Project "C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\SFML Platformer.vcxproj" (Rebuild target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.62
+Time Elapsed 00:00:01.93

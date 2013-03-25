@@ -83,6 +83,8 @@ server.on("message", function (message, information) {
             var id = parseInt(params[1], 10); // get player ID from args
             players.splice(id, 1); // remove player
 
+            console.log("INFO: Player " + id + " disconnected");
+
             // inform everyone else that a player just disconnected
 
             break;

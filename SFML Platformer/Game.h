@@ -18,9 +18,13 @@ using namespace std;
 class Game {
 	public:
 		static void Start();
+		static void AddDrawableGameObject(DrawableGameObject object);
+
 		static vector<GameObject*> gameObjects;
 		static Player player;
 		static View view;
+
+		static ofstream Game::logger;
 
 	private:
 		static void Loop();
