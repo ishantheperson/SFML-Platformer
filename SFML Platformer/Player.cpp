@@ -5,8 +5,8 @@
 #define JUMP_HEIGHT 20
 #define SPEED 2
 
-#define PORT 9000
-#define LISTEN_PORT 9001
+#define PORT 9000 // this must be the same
+#define LISTEN_PORT 9001 // this can change
 #define ADDRESS "127.0.0.1"
 #define BUFFER_SIZE 1024
 
@@ -32,7 +32,7 @@ Player::Player(string name, Vector2f position, int direction) {
 	#pragma region Network
 	address = new IpAddress(ADDRESS);
 	this -> socket.setBlocking(true);
-	socket.bind(LISTEN_PORT);
+	socket.bind(Socket::AnyPort);
 
 	Packet packet;
 
