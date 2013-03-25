@@ -16,9 +16,12 @@ class Player : public DrawableGameObject
 
 		friend ostream& operator<<(ostream& stream, const Player& player);
 	private:
+		void Listen();
+
 		float velocity;
 		Vector2f lastPosition;
 
+		Thread listenThread;
 		IpAddress* address;
 		UdpSocket socket;
 		Packet packet;

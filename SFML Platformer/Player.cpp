@@ -32,7 +32,7 @@ Player::Player(string name, Vector2f position, int direction) {
 	#pragma region Network
 	address = new IpAddress(ADDRESS);
 	this -> socket.setBlocking(true);
-	socket.bind(Socket::AnyPort);
+	socket.bind(Socket::AnyPort); // pick a port, any port
 
 	Packet packet;
 
@@ -155,14 +155,13 @@ void Player::Update(Level world, View view) {
 		cout << "Data sent" << endl;
 	} // else no data needs to be sent
 
-	// receive data
+	// receive data -- TODO: move to Player::Listen function
 	char response[BUFFER_SIZE];
 	size_t received = 0;
 	unsigned short port;
 
 	IpAddress sender;
-	socket.setBlocking(false);
-	socket.receive(response, 1024, received, sender, port);
+	socket.receive(response, BUFFER_SIZE, received, sender, port);
 
 	string message(response, received);
 
@@ -170,6 +169,17 @@ void Player::Update(Level world, View view) {
 	#pragma endregion
 
 	lastPosition = sprite.getPosition();
+}
+
+void Player::Listen() {
+	char data[BUFFER_SIZE]; // received data
+	size_t received = 0; // amount we received
+	unsigned short port; // the port it was received from
+
+	IpAddress sender; // the person who sent the data
+	socket.receive(data, BUFFER_SIZE, received, sender, port); // receive the data
+
+	string message(data, received);
 }
 
 ostream& operator<< (ostream& stream, const Player& player) {
