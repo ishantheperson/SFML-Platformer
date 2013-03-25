@@ -24,6 +24,8 @@ class Game {
 		static Player player;
 		static View view;
 
+		static ofstream Game::logger;
+
 	private:
 		static void Loop();
 		static void Splash();

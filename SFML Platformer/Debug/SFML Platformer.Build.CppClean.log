@@ -1,105 +1,191 @@
-C:\USERS\ISHAN\DOCUMENTS\VISUAL STUDIO 2012\PROJECTS\SFML PLATFORMER\SFML PLATFORMER\DEBUG\VC110.PDB
 C:\USERS\ISHAN\DOCUMENTS\VISUAL STUDIO 2012\PROJECTS\SFML PLATFORMER\SFML PLATFORMER\DEBUG\SFML PLATFORMER.PCH
+C:\USERS\ISHAN\DOCUMENTS\VISUAL STUDIO 2012\PROJECTS\SFML PLATFORMER\SFML PLATFORMER\DEBUG\VC110.PDB
 C:\USERS\ISHAN\DOCUMENTS\VISUAL STUDIO 2012\PROJECTS\SFML PLATFORMER\SFML PLATFORMER\DEBUG\STDAFX.OBJ
-C:\USERS\ISHAN\DOCUMENTS\VISUAL STUDIO 2012\PROJECTS\SFML PLATFORMER\SFML PLATFORMER\DEBUG\GAME.OBJ
-C:\USERS\ISHAN\DOCUMENTS\VISUAL STUDIO 2012\PROJECTS\SFML PLATFORMER\SFML PLATFORMER\DEBUG\MAIN.OBJ
+C:\USERS\ISHAN\DOCUMENTS\VISUAL STUDIO 2012\PROJECTS\SFML PLATFORMER\SFML PLATFORMER\DEBUG\DRAWABLEGAMEOBJECT.OBJ
 C:\USERS\ISHAN\DOCUMENTS\VISUAL STUDIO 2012\PROJECTS\SFML PLATFORMER\SFML PLATFORMER\DEBUG\FADE.OBJ
 C:\USERS\ISHAN\DOCUMENTS\VISUAL STUDIO 2012\PROJECTS\SFML PLATFORMER\SFML PLATFORMER\DEBUG\GAMEOBJECT.OBJ
-C:\USERS\ISHAN\DOCUMENTS\VISUAL STUDIO 2012\PROJECTS\SFML PLATFORMER\SFML PLATFORMER\DEBUG\DRAWABLEGAMEOBJECT.OBJ
+C:\USERS\ISHAN\DOCUMENTS\VISUAL STUDIO 2012\PROJECTS\SFML PLATFORMER\SFML PLATFORMER\DEBUG\MAIN.OBJ
+C:\USERS\ISHAN\DOCUMENTS\VISUAL STUDIO 2012\PROJECTS\SFML PLATFORMER\SFML PLATFORMER\DEBUG\GAME.OBJ
+C:\USERS\ISHAN\DOCUMENTS\VISUAL STUDIO 2012\PROJECTS\SFML PLATFORMER\SFML PLATFORMER\DEBUG\LEVEL.OBJ
+C:\USERS\ISHAN\DOCUMENTS\VISUAL STUDIO 2012\PROJECTS\SFML PLATFORMER\SFML PLATFORMER\DEBUG\PLAYER.OBJ
+C:\USERS\ISHAN\DOCUMENTS\VISUAL STUDIO 2012\PROJECTS\SFML PLATFORMER\SFML PLATFORMER\DEBUG\SCROLLINGBACKGROUND.OBJ
+C:\USERS\ISHAN\DOCUMENTS\GITHUB\SFML-PLATFORMER\SFML PLATFORMER\DEBUG\SFML PLATFORMER.PCH
+C:\USERS\ISHAN\DOCUMENTS\GITHUB\SFML-PLATFORMER\SFML PLATFORMER\DEBUG\VC110.PDB
+C:\USERS\ISHAN\DOCUMENTS\GITHUB\SFML-PLATFORMER\SFML PLATFORMER\DEBUG\STDAFX.OBJ
+C:\USERS\ISHAN\DOCUMENTS\GITHUB\SFML-PLATFORMER\SFML PLATFORMER\DEBUG\DRAWABLEGAMEOBJECT.OBJ
+C:\USERS\ISHAN\DOCUMENTS\GITHUB\SFML-PLATFORMER\SFML PLATFORMER\DEBUG\FADE.OBJ
+C:\USERS\ISHAN\DOCUMENTS\GITHUB\SFML-PLATFORMER\SFML PLATFORMER\DEBUG\GAME.OBJ
+C:\USERS\ISHAN\DOCUMENTS\GITHUB\SFML-PLATFORMER\SFML PLATFORMER\DEBUG\GAMEOBJECT.OBJ
+C:\USERS\ISHAN\DOCUMENTS\GITHUB\SFML-PLATFORMER\SFML PLATFORMER\DEBUG\LEVEL.OBJ
+C:\USERS\ISHAN\DOCUMENTS\GITHUB\SFML-PLATFORMER\SFML PLATFORMER\DEBUG\MAIN.OBJ
+C:\USERS\ISHAN\DOCUMENTS\GITHUB\SFML-PLATFORMER\SFML PLATFORMER\DEBUG\SCROLLINGBACKGROUND.OBJ
+C:\USERS\ISHAN\DOCUMENTS\GITHUB\SFML-PLATFORMER\SFML PLATFORMER\DEBUG\PLAYER.OBJ
 C:\USERS\ISHAN\DOCUMENTS\VISUAL STUDIO 2012\PROJECTS\SFML PLATFORMER\DEBUG\SFML PLATFORMER.ILK
 C:\USERS\ISHAN\DOCUMENTS\VISUAL STUDIO 2012\PROJECTS\SFML PLATFORMER\DEBUG\SFML PLATFORMER.EXE
 C:\USERS\ISHAN\DOCUMENTS\VISUAL STUDIO 2012\PROJECTS\SFML PLATFORMER\DEBUG\SFML PLATFORMER.PDB
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\DrawableGameObject.obj
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\Fade.obj
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\Game.obj
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\GameObject.obj
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\main.obj
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\stdafx.obj
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\cl.command.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\CL.read.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\CL.write.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link-cvtres.read.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link-cvtres.write.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link-rc.read.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link-rc.write.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.115792-cvtres.read.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.115792-cvtres.write.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.115792-rc.read.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.115792-rc.write.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.115792.read.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.115792.write.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.130188-cvtres.read.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.130188-cvtres.write.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.130188-rc.read.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.130188-rc.write.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.130188.read.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.130188.write.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.180828-cvtres.read.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.180828-cvtres.write.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.180828-rc.read.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.180828-rc.write.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.180828.read.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.180828.write.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.186744-cvtres.read.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.186744-cvtres.write.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.186744-rc.read.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.186744-rc.write.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.186744.read.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.186744.write.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.187232-cvtres.read.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.187232-cvtres.write.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.187232-rc.read.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.187232-rc.write.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.187232.read.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.187232.write.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.187520-cvtres.read.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.187520-cvtres.write.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.187520-rc.read.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.187520-rc.write.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.187520.read.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.187520.write.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.187560-cvtres.read.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.187560-cvtres.write.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.187560-rc.read.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.187560-rc.write.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.187560.read.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.187560.write.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.188236-cvtres.read.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.188236-cvtres.write.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.188236-rc.read.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.188236-rc.write.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.188236.read.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.188236.write.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.66868-cvtres.read.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.66868-cvtres.write.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.66868-rc.read.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.66868-rc.write.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.66868.read.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.66868.write.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.77588-cvtres.read.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.77588-cvtres.write.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.77588-rc.read.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.77588-rc.write.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.77588.read.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.77588.write.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.82792-cvtres.read.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.82792-cvtres.write.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.82792-rc.read.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.82792-rc.write.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.82792.read.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.82792.write.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.99984-cvtres.read.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.99984-cvtres.write.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.99984-rc.read.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.99984-rc.write.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.99984.read.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.99984.write.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.command.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.read.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\link.write.1.tlog
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\SFML Platformer.pch
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\vc110.idb
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\SFML Platformer\Debug\vc110.pdb
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\Debug\SFML Platformer.pdb
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\Debug\SFML Platformer.exe
-C:\Users\Ishan\Documents\Visual Studio 2012\Projects\SFML Platformer\Debug\SFML Platformer.ilk
+C:\USERS\ISHAN\DOCUMENTS\GITHUB\SFML-PLATFORMER\DEBUG\SFML PLATFORMER.ILK
+C:\USERS\ISHAN\DOCUMENTS\GITHUB\SFML-PLATFORMER\DEBUG\SFML PLATFORMER.EXE
+C:\USERS\ISHAN\DOCUMENTS\GITHUB\SFML-PLATFORMER\DEBUG\SFML PLATFORMER.PDB
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\DrawableGameObject.obj
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\Fade.obj
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\Game.obj
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\GameObject.obj
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\Level.obj
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\main.obj
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\Player.obj
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\ScrollingBackground.obj
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\stdafx.obj
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\cl.command.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\CL.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\CL.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link-cvtres.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link-cvtres.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link-rc.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link-rc.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.109152-cvtres.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.109152-cvtres.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.109152-rc.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.109152-rc.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.109152.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.109152.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.111704-cvtres.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.111704-cvtres.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.111704-rc.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.111704-rc.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.111704.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.111704.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.113356-cvtres.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.113356-cvtres.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.113356-rc.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.113356-rc.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.113356.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.113356.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.121704-cvtres.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.121704-cvtres.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.121704-rc.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.121704-rc.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.121704.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.121704.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.236752-cvtres.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.236752-cvtres.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.236752-rc.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.236752-rc.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.236752.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.236752.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.236884-cvtres.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.236884-cvtres.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.236884-rc.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.236884-rc.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.236884.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.236884.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.245708-cvtres.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.245708-cvtres.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.245708-rc.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.245708-rc.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.245708.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.245708.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.249960-cvtres.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.249960-cvtres.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.249960-rc.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.249960-rc.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.249960.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.249960.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.28852-cvtres.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.28852-cvtres.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.28852-rc.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.28852-rc.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.28852.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.28852.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.29856-cvtres.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.29856-cvtres.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.29856-rc.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.29856-rc.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.29856.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.29856.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.30576-cvtres.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.30576-cvtres.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.30576-rc.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.30576-rc.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.30576.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.30576.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.32536-cvtres.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.32536-cvtres.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.32536-rc.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.32536-rc.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.32536.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.32536.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.328256-cvtres.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.328256-cvtres.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.328256-rc.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.328256-rc.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.328256.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.328256.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.344212-cvtres.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.344212-cvtres.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.344212-rc.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.344212-rc.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.344212.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.344212.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.349232-cvtres.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.349232-cvtres.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.349232-rc.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.349232-rc.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.349232.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.349232.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.353576-cvtres.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.353576-cvtres.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.353576-rc.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.353576-rc.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.353576.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.353576.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.362380-cvtres.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.362380-cvtres.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.362380-rc.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.362380-rc.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.362380.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.362380.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.69760-cvtres.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.69760-cvtres.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.69760-rc.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.69760-rc.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.69760.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.69760.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.7204-cvtres.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.7204-cvtres.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.7204-rc.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.7204-rc.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.7204.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.7204.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.88624-cvtres.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.88624-cvtres.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.88624-rc.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.88624-rc.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.88624.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.88624.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.94800-cvtres.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.94800-cvtres.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.94800-rc.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.94800-rc.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.94800.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.94800.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.94888-cvtres.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.94888-cvtres.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.94888-rc.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.94888-rc.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.94888.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.94888.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.96268-cvtres.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.96268-cvtres.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.96268-rc.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.96268-rc.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.96268.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.96268.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.command.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.read.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\link.write.1.tlog
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\SFML Platformer.pch
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\vc110.idb
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\Debug\vc110.pdb
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\Debug\SFML Platformer.pdb
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\Debug\SFML Platformer.exe
+C:\Users\Ishan\Documents\GitHub\SFML-Platformer\Debug\SFML Platformer.ilk

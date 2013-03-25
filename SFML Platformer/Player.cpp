@@ -13,11 +13,11 @@
 Player::Player(string name, Vector2f position, int direction) {
 	#pragma region Sprite
 	Sprite sprite;
-	cout << "INFO: Created new DrawableGameObject w/ normal constructor" << endl;
+	Game::logger << "INFO: Created new DrawableGameObject w/ normal constructor" << "\n";
 	if (!texture.loadFromFile("res/image/" + name)) {
-		cout << "WARNING: could not load image " << name << endl;
+		Game::logger << "WARNING: could not load image " << name << "\n";
 	}
-	cout << "INFO: Loaded image " << name << endl;
+	Game::logger << "INFO: Loaded image " << name << "\n";
 	this -> sprite.setTexture(texture);
 	this -> sprite.setOrigin(texture.getSize().x / 2, texture.getSize().y / 2);
 	this -> sprite.setPosition(position);
@@ -47,12 +47,12 @@ Player::Player(string name, Vector2f position, int direction) {
 
 	IpAddress sender;
 
-	cout << "INFO: Receiving message..." << endl;
+	Game::logger << "INFO: Receiving message..." << "\n";
 	socket.receive(response, 1024, received, sender, port);
-	cout << "INFO: Received message." << endl;
+	Game::logger << "INFO: Received message." << "\n";
 
 	string message(response, received);
-	cout << "INFO: Player received message: " << message << endl;
+	Game::logger << "INFO: Player received message: " << message << "\n";
 	id = atoi(message.c_str());
 
 	// after initial connection do not block
@@ -62,12 +62,14 @@ Player::Player(string name, Vector2f position, int direction) {
 	#pragma endregion
 }
 
-Player::~Player() { }
+Player::~Player() {
+	delete address; // remove pointer
+}
 
 void Player::Update(Level world, View view) {
 	#pragma region Movement
 	if (Keyboard::isKeyPressed(Keyboard::O)) {
-		cout << "INFO: Player position X: " << sprite.getPosition().x << " Y: " << sprite.getPosition().y << endl;
+		Game::logger << "INFO: Player position X: " << sprite.getPosition().x << " Y: " << sprite.getPosition().y << "\n";
 	}
 
 	bool left = Keyboard::isKeyPressed(Keyboard::A);
@@ -145,27 +147,16 @@ void Player::Update(Level world, View view) {
 	// send data to server
 	if (lastPosition != sprite.getPosition()) {
 		socket.setBlocking(false);
-		cout << "Sending data..." << endl;
+		Game::logger << "Sending data..." << "\n";
 		Packet packet;
 		string command = "move " + to_string(id) + " " + to_string(sprite.getPosition().x) + " " + to_string(sprite.getPosition().y);
 		packet.append(command.c_str(), command.size());
 
 		socket.send(packet, *address, PORT);
 
-		cout << "Data sent" << endl;
+		Game::logger << "Data sent" << "\n";
 	} // else no data needs to be sent
 
-	// receive data -- TODO: move to Player::Listen function
-	char response[BUFFER_SIZE];
-	size_t received = 0;
-	unsigned short port;
-
-	IpAddress sender;
-	socket.receive(response, BUFFER_SIZE, received, sender, port);
-
-	string message(response, received);
-
-	if (message.length() > 0) { cout << "INFO: Player received message: " << message << endl; }
 	#pragma endregion
 
 	lastPosition = sprite.getPosition();
@@ -182,7 +173,10 @@ void Player::Listen() {
 	string message(data, received);
 }
 
+
+#ifdef _DEBUG
 ostream& operator<< (ostream& stream, const Player& player) {
 	stream << player.sprite.getPosition().x << ' ' << player.sprite.getPosition().y;
 	return stream;
 }
+#endif
