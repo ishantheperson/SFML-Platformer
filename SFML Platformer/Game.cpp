@@ -7,9 +7,13 @@ void Game::Start() {
 	gameWindow.setFramerateLimit(MAX_FRAMERATE);
 	gameWindow.setView(view);
 
-	cout << "Player initialized at X: " << level.startLocation.x << " Y: " << level.startLocation.y << endl;
+	cout << "Player initialized at X: " << level.startLocation.x << " Y: " << level.startLocation.y << "\n";
 
 	Loop();
+
+	// disconnect
+
+	// player.Disconnect();
 }
 
 void Game::Loop() {
@@ -42,7 +46,8 @@ void Game::Loop() {
 	}
 }
 
-void Game::Splash() { }
+
+void Game::Splash() { } // todo: implement splash screen
 
 Player Game::player("player.png", Vector2f(25, 100), RIGHT);
 RenderWindow Game::gameWindow;

@@ -9,7 +9,7 @@ DrawableGameObject::DrawableGameObject() {
 
 DrawableGameObject::DrawableGameObject(string name, Vector2f position = Vector2f(0, 0), int direction = 1) {
 	if (!texture.loadFromFile("res/image/" + name)) {
-		cout << "WARNING: could not load image " << name << endl;
+		cout  << "WARNING: could not load image " << name << "\n";
 	}
 	sprite.setTexture(texture);
 	sprite.setPosition(position);

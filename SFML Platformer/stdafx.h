@@ -8,10 +8,12 @@
 #include "targetver.h"
 
 // System
-#include <tchar.h>
-#include <iostream>
-#include <cassert>
-#include <vector>
+#include <tchar.h> // _tmain
+#include <iostream> // cout /cin
+#include <cassert> // assert()
+#include <vector> // vector<>
+#include <fstream> // logging
+#include <ctime>
 
 // SFML
 #include <SFML/Window.hpp>
