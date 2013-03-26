@@ -1,48 +1,8 @@
-﻿Build started 3/25/2013 5:23:21 PM.
+﻿Build started 3/26/2013 12:20:49 PM.
      1>Project "C:\Users\Ishan\Documents\GitHub\SFML-Platformer\SFML Platformer\SFML Platformer.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\SFML Platformer.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
-         stdafx.cpp
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\SFML Platformer.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt DrawableGameObject.cpp Fade.cpp Game.cpp GameObject.cpp Level.cpp Player.cpp ScrollingBackground.cpp main.cpp
-         Player.cpp
-     1>c:\users\ishan\documents\github\sfml-platformer\sfml platformer\player.cpp(22): warning C4244: 'argument' : conversion from 'unsigned int' to 'float', possible loss of data
-     1>c:\program files (x86)\microsoft visual studio 11.0\vc\include\xutility(2176): warning C4996: 'std::_Copy_impl': Function call with parameters that may be unsafe - this call relies on the caller to check that the passed values are correct. To disable this warning, use -D_SCL_SECURE_NO_WARNINGS. See documentation on how to use Visual C++ 'Checked Iterators'
-                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\xutility(2157) : see declaration of 'std::_Copy_impl'
-                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\boost\algorithm\string\detail\classification.hpp(102) : see reference to function template instantiation '_OutIt std::copy<const char*,char*>(_InIt,_InIt,_OutIt)' being compiled
-                 with
-                 [
-                     _OutIt=char *,
-                     _InIt=const char *
-                 ]
-                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\boost\algorithm\string\classification.hpp(206) : see reference to function template instantiation 'boost::algorithm::detail::is_any_ofF<CharT>::is_any_ofF<boost::iterator_range<IteratorT>>(const RangeT &)' being compiled
-                 with
-                 [
-                     CharT=char,
-                     IteratorT=const char *,
-                     RangeT=boost::iterator_range<const char *>
-                 ]
-                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\boost\algorithm\string\classification.hpp(206) : see reference to function template instantiation 'boost::algorithm::detail::is_any_ofF<CharT>::is_any_ofF<boost::iterator_range<IteratorT>>(const RangeT &)' being compiled
-                 with
-                 [
-                     CharT=char,
-                     IteratorT=const char *,
-                     RangeT=boost::iterator_range<const char *>
-                 ]
-                 c:\users\ishan\documents\github\sfml-platformer\sfml platformer\player.cpp(182) : see reference to function template instantiation 'boost::algorithm::detail::is_any_ofF<CharT> boost::algorithm::is_any_of<const char[2]>(RangeT (&))' being compiled
-                 with
-                 [
-                     CharT=char,
-                     RangeT=const char [2]
-                 ]
-         Generating Code...
-         Skipping... (no relevant changes detected)
-         main.cpp
-         ScrollingBackground.cpp
-         Level.cpp
-         GameObject.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\SFML Platformer.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Game.cpp
          Game.cpp
-         Fade.cpp
-         DrawableGameObject.cpp
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Ishan\Documents\GitHub\SFML-Platformer\Debug\SFML Platformer.exe" /INCREMENTAL /NOLOGO "sfml-audio-d.lib" "sfml-graphics-d.lib" "sfml-main-d.lib" "sfml-network-d.lib" "sfml-system-d.lib" "sfml-window-d.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Ishan\Documents\GitHub\SFML-Platformer\Debug\SFML Platformer.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Ishan\Documents\GitHub\SFML-Platformer\Debug\SFML Platformer.lib" /MACHINE:X86 Debug\DrawableGameObject.obj
          Debug\Fade.obj
@@ -58,4 +18,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:03.42
+Time Elapsed 00:00:00.75

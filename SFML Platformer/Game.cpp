@@ -19,6 +19,8 @@ void Game::Start() {
 void Game::Loop() {
 	Event event;
 
+	networkedPlayers = map<int, DrawableGameObject*>();
+
 	while (gameWindow.isOpen()) {
 		while (gameWindow.pollEvent(event)) {
 			// handle events BEFORE drawing
@@ -39,6 +41,14 @@ void Game::Loop() {
 			gameObjects[i] -> Draw(gameWindow);
 		}
 
+		// Draw NetworkedPlayers
+		
+		for (map<int, DrawableGameObject*>::iterator it = networkedPlayers.begin(); it != networkedPlayers.end(); it++) {
+			cout << "INFO: Drawing networked player " << it -> first << endl;
+			it -> second -> Draw(gameWindow);
+			cout << "INFO: Done drawing networked player" << endl;
+		}
+
 		level.Draw(gameWindow);
 
 		gameWindow.display();
@@ -46,6 +56,18 @@ void Game::Loop() {
 	}
 }
 
+void Game::AddNetworkedPlayer(int id, DrawableGameObject* player) {
+	cout << "INFO: Inserting new networked player..." << endl;
+	// add player
+	networkedPlayers.insert(map<int, DrawableGameObject*>::value_type(id, player));
+	cout << "INFP: Successfully inserted new networked player" << endl;
+}
+
+void Game::UpdateNetworkedPlayer(int id, int x, int y) {
+	cout << "INFO: Updating a networked player..." << endl;
+	// update player
+	cout << "INFO: Successfully updates a networked player" << endl;
+}
 
 void Game::Splash() { } // todo: implement splash screen
 
@@ -55,3 +77,5 @@ vector<GameObject*> Game::gameObjects;
 
 Level Game::level("scrolling.png");
 View Game::view(FloatRect(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT));
+
+map<int, DrawableGameObject*> Game::networkedPlayers;

@@ -1,5 +1,7 @@
 #pragma once
 
+#include <map>
+
 #include "stdafx.h" 
 #include "GameObject.h"
 #include "DrawableGameObject.h"
@@ -18,7 +20,9 @@ using namespace std;
 class Game {
 	public:
 		static void Start();
-		static void AddDrawableGameObject(DrawableGameObject object);
+
+		static void AddNetworkedPlayer(int id, DrawableGameObject* player);
+		static void UpdateNetworkedPlayer(int id, int x, int y);
 
 		static vector<GameObject*> gameObjects;
 		static Player player;
@@ -29,5 +33,6 @@ class Game {
 		static void Splash();
 		static RenderWindow gameWindow;
 		static Level level;
+		static map<int, DrawableGameObject*> networkedPlayers;
 };
 

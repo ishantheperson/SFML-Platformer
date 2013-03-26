@@ -35,6 +35,8 @@ class Player : public DrawableGameObject
 		Packet packet;
 
 		int id;
+		string serverMessage;
+		Text serverMessageText;
 		string name;
 };
 

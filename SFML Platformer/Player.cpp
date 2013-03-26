@@ -6,7 +6,6 @@
 #define SPEED 2
 
 #define PORT 9000 // this must be the same
-#define LISTEN_PORT 9001 // this can change
 #define ADDRESS "127.0.0.1"
 #define BUFFER_SIZE 1024
 
@@ -61,7 +60,6 @@ Player::Player(const string name, Vector2f position, int direction) {
 	unsigned short port = socket -> getLocalPort();
 
 	thread* listenThread = new thread(&Player::Listen);
-	listenThread -> join();
 
 #pragma endregion
 }
@@ -165,6 +163,7 @@ void Player::Update(Level world, View view) {
 }
 
 void Player::Listen() {
+	cout << "INFO: Listening!" << endl;
 	while (true) {
 		char data[BUFFER_SIZE]; // received data
 		size_t received = 0; // amount we received
@@ -176,11 +175,18 @@ void Player::Listen() {
 		string message(data, received);
 
 		if (message.length() > 0) {
+			cout << "INFO: Received message" << endl;
 			// handle message here
 			// 1. split string
 			vector<string> params;
 			boost::split(params, message, boost::is_any_of(" "));
-			cout << "Parsed message action: " << params[0] << endl;
+			cout << "INFO: Parsed message action: " << params[0] << endl;
+			if (params[0] == "add") {
+				// add player
+				cout << "INFO: Calling add() on network player..." << endl;
+				Game::AddNetworkedPlayer(atoi(params[1].c_str()), new DrawableGameObject("player.png", Vector2f(atoi(params[2].c_str()), atoi(params[3].c_str())), RIGHT));
+				cout << "INFO: Done calling add()" << endl;
+			}
 		}
 	}
 }

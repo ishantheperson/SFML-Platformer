@@ -35,7 +35,8 @@ server.on("message", function (messageText, information) {
             var message = id.toString(10);
             var response = createBuffer(message);
 
-            server.send(response, 0, response.length, information.port, information.address, function (error, sent) {
+            // SERVER RESPONSE: sends ID
+            server.send(response, 0, response.length, information.port, information.address, function (error, sent) { 
                 if (error) {
                     console.log("ERROR: could not send login response");
                 }
@@ -44,10 +45,19 @@ server.on("message", function (messageText, information) {
                 }
             });
 
-            //broadcast mesage to others
+            // send back other players
+            players.forEach(function (player, index, array) {
+                if (player.id != id) {
+                    // SERVER RESPONSE: sends player COMMAND to ADD NEW PlAYER (VERB == ADD)
+                    // SYNTAX: add <ID> <X> <Y>
+                    var buffer = createBuffer("add " + player.id + " " + player.x + " " + player.y);
+                    server.send(buffer, 0, buffer.length, information.port, information.address);
+                }
+            });
+
+            // broadcast mesage to others
             var broadcastMessage = "joined " + message + " " + currentPlayer.x + " " + currentPlayer.y;
-            var broadcastBuffer = new Buffer(broadcastMessage.length);
-            broadcastBuffer.write(broadcastMessage);
+            var broadcastBuffer = createBuffer(broadcastMessage);
 
             players.forEach(function (player, index, array) {
                 if (player.id != id) {
@@ -70,7 +80,7 @@ server.on("message", function (messageText, information) {
 
             console.log("INFO: Data received from player " + id + " move to " + x + " " + y);
 
-            var message = id + " " + x + " " + y;
+            var message = "move " + id + " " + x + " " + y;
             var buffer = new Buffer(message.length);
             buffer.write(message);
 
@@ -116,8 +126,12 @@ var webServer = http.createServer(function (request, response) {
         response.write("<html><head><title>Node.js Game Server Management</title></head>");
         response.write("<style type=\"text/css\">body { margin: 50px 100px; font-family: Arial; } p { margin-left: 5px; } </style>");
         response.write("<body>");
-        response.write("<h1>Management</h1>");
-        response.write("<p>Nothing here (yet)</p>");
+        response.write("<h1>Connected Players</h1>");
+        players.forEach(function (player, index, array) {
+            response.write("<p><b>Player " + player.id + "</b><br>");
+            response.write("IP Address: " + player.ip + ":" + player.port + "<br>");
+            response.write("Position: (" + player.x + ", " + player.y + ")<br></p>");
+        });
         response.write("</body></html>");
 
         response.end();
