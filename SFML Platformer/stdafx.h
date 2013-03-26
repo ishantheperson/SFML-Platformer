@@ -9,7 +9,7 @@
 
 // System
 #include <tchar.h> // _tmain
-#include <iostream> // Game::logger/cin
+#include <iostream> // cout/cin
 #include <cassert> // assert()
 #include <vector> // vector<>
 #include <fstream> // logging

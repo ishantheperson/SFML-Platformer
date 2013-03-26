@@ -2,7 +2,11 @@
 
 #include "stdafx.h"
 #include "DrawableGameObject.h"
+
 #include <SFML/Network.hpp>
+#include <thread>
+#include <boost/algorithm/string.hpp>
+
 
 using namespace std;
 using namespace sf;
@@ -18,15 +22,19 @@ class Player : public DrawableGameObject
 
 		friend ostream& operator<<(ostream& stream, const Player& player);
 	private:
-		void Listen();
+		static void Listen();
+		string GetRandomName();
 
 		float velocity;
 		Vector2f lastPosition;
 
-		Thread* listenThread;
+		thread* listenThread;
+
 		IpAddress* address;
-		UdpSocket socket;
+		static UdpSocket* socket;
 		Packet packet;
+
 		int id;
+		string name;
 };
 

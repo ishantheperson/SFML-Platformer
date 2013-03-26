@@ -10,7 +10,7 @@ Fade::Fade(int time, Color color, RenderWindow* window)
 
 	Texture texture;
 	if (!texture.loadFromFile("/res/image/pixel.png")) {
-		Game::logger << "WARNING: Couldn't load pixel!" << "\n";
+		cout << "WARNING: Couldn't load pixel!" << "\n";
 	}
 	pixel.setTexture(texture);
 }

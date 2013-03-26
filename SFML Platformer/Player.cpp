@@ -10,14 +10,14 @@
 #define ADDRESS "127.0.0.1"
 #define BUFFER_SIZE 1024
 
-Player::Player(string name, Vector2f position, int direction) {
-	#pragma region Sprite
+Player::Player(const string name, Vector2f position, int direction) {
+#pragma region Sprite
 	Sprite sprite;
-	Game::logger << "INFO: Created new DrawableGameObject w/ normal constructor" << "\n";
+	cout << "INFO: Created new DrawableGameObject w/ normal constructor" << "\n";
 	if (!texture.loadFromFile("res/image/" + name)) {
-		Game::logger << "WARNING: could not load image " << name << "\n";
+		cout << "WARNING: could not load image " << name << "\n";
 	}
-	Game::logger << "INFO: Loaded image " << name << "\n";
+	cout << "INFO: Loaded image " << name << "\n";
 	this -> sprite.setTexture(texture);
 	this -> sprite.setOrigin(texture.getSize().x / 2, texture.getSize().y / 2);
 	this -> sprite.setPosition(position);
@@ -27,49 +27,55 @@ Player::Player(string name, Vector2f position, int direction) {
 
 	this -> lastPosition = position;
 
-	#pragma endregion
+#pragma endregion
 
-	#pragma region Network
+#pragma region Network
 	address = new IpAddress(ADDRESS);
-	this -> socket.setBlocking(true);
-	socket.bind(Socket::AnyPort); // pick a port, any port
-
+	socket = new UdpSocket;
+	socket -> setBlocking(true);
+	cout << "INFO: Binding socket #1" << endl;
+	socket -> bind(Socket::AnyPort); // pick a port, any port
+	cout << "INFO: Bound socket #1 to port " << socket -> getLocalPort() << endl;
 	Packet packet;
 
-	string command = "join " + to_string(sprite.getPosition().x) + " " + to_string(sprite.getPosition().y);
+	this -> name = GetRandomName();
+	string command = "join " + to_string(sprite.getPosition().x) + " " + to_string(sprite.getPosition().y) + " " + name;
 
 	packet.append(command.c_str(), command.size());
-	socket.send(packet, *address, PORT);
+	socket -> send(packet, *address, PORT);
 
 	char response[BUFFER_SIZE];
 	size_t received = 0;
-	unsigned short port;
+	unsigned short receivePort;
 
 	IpAddress sender;
 
-	Game::logger << "INFO: Receiving message..." << "\n";
-	socket.receive(response, 1024, received, sender, port);
-	Game::logger << "INFO: Received message." << "\n";
+	cout << "INFO: Receiving message..." << "\n";
+	socket -> receive(response, 1024, received, sender, receivePort);
+	cout << "INFO: Received message." << "\n";
 
 	string message(response, received);
-	Game::logger << "INFO: Player received message: " << message << "\n";
+	cout << "INFO: Player received message: " << message << "\n";
 	id = atoi(message.c_str());
 
-	// after initial connection do not block
-	
-	// socket.setBlocking(false);
+	unsigned short port = socket -> getLocalPort();
 
-	#pragma endregion
+	thread* listenThread = new thread(&Player::Listen);
+	listenThread -> join();
+
+#pragma endregion
 }
 
 Player::~Player() {
-	delete address; // remove pointer
+	delete address; // remove pointers
+	delete socket;
+	delete listenThread;
 }
 
 void Player::Update(Level world, View view) {
-	#pragma region Movement
+#pragma region Movement
 	if (Keyboard::isKeyPressed(Keyboard::O)) {
-		Game::logger << "INFO: Player position X: " << sprite.getPosition().x << " Y: " << sprite.getPosition().y << "\n";
+		cout << "INFO: Player position X: " << sprite.getPosition().x << " Y: " << sprite.getPosition().y << "\n";
 	}
 
 	bool left = Keyboard::isKeyPressed(Keyboard::A);
@@ -91,7 +97,7 @@ void Player::Update(Level world, View view) {
 	groundCollisionRect.height = 2;
 	groundCollisionRect.width -= 10;
 	groundCollisionRect.left += 5;
-	
+
 	if (right && !(world.Collides(rightCollisionRect))) {
 		if (direction == LEFT) {
 			Flip(); 
@@ -102,7 +108,7 @@ void Player::Update(Level world, View view) {
 		}
 		sprite.move(SPEED, 0); 
 	}
-	
+
 	if (left && !(world.Collides(leftCollisionRect))) {
 		if (direction == RIGHT) {
 			Flip();
@@ -142,37 +148,57 @@ void Player::Update(Level world, View view) {
 			velocity = 0;
 		}
 	}
-	#pragma endregion
-	#pragma region Network
+#pragma endregion
+#pragma region Network
 	// send data to server
 	if (lastPosition != sprite.getPosition()) {
-		socket.setBlocking(false);
-		Game::logger << "Sending data..." << "\n";
 		Packet packet;
-		string command = "move " + to_string(id) + " " + to_string(sprite.getPosition().x) + " " + to_string(sprite.getPosition().y);
+		string command = "move " + to_string(id) + " " + to_string(sprite.getPosition().x) + " " + to_string(sprite.getPosition().y) + " " + name;
 		packet.append(command.c_str(), command.size());
 
-		socket.send(packet, *address, PORT);
-
-		Game::logger << "Data sent" << "\n";
+		socket -> send(packet, *address, PORT);
 	} // else no data needs to be sent
 
-	#pragma endregion
+#pragma endregion
 
 	lastPosition = sprite.getPosition();
 }
 
 void Player::Listen() {
-	char data[BUFFER_SIZE]; // received data
-	size_t received = 0; // amount we received
-	unsigned short port; // the port it was received from
+	while (true) {
+		char data[BUFFER_SIZE]; // received data
+		size_t received = 0; // amount we received
+		unsigned short port; // the port it was received from
 
-	IpAddress sender; // the person who sent the data
-	socket.receive(data, BUFFER_SIZE, received, sender, port); // receive the data
+		IpAddress sender; // the person who sent the data
+		socket -> receive(data, BUFFER_SIZE, received, sender, port); // receive the data
 
-	string message(data, received);
+		string message(data, received);
+
+		if (message.length() > 0) {
+			// handle message here
+			// 1. split string
+			vector<string> params;
+			boost::split(params, message, boost::is_any_of(" "));
+			cout << "Parsed message action: " << params[0] << endl;
+		}
+	}
 }
 
+inline string Player::GetRandomName() {
+	string name = "";
+	static const char alphanum[] =
+		"0123456789"
+		"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+		"abcdefghijklmnopqrstuvwxyz";
+
+	for (int i = 0; i < 5; ++i) {
+		name += alphanum[rand() % (sizeof(alphanum) - 1)];
+	}
+
+	return name;
+
+}
 
 #ifdef _DEBUG
 ostream& operator<< (ostream& stream, const Player& player) {
@@ -180,3 +206,5 @@ ostream& operator<< (ostream& stream, const Player& player) {
 	return stream;
 }
 #endif
+
+UdpSocket* Player::socket;
