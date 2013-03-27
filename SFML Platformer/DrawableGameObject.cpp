@@ -8,9 +8,11 @@ DrawableGameObject::DrawableGameObject() {
 }
 
 DrawableGameObject::DrawableGameObject(string name, Vector2f position = Vector2f(0, 0), int direction = 1) {
-	if (!texture.loadFromFile("res/image/" + name)) {
-		cout << "WARNING: could not load image " << name << "\n";
+	if (!image.loadFromFile("res/image/" + name)) {
+		cout << "WARNING: could not load image " << name << endl;
 	}
+
+	texture.loadFromImage(image);
 	sprite.setTexture(texture);
 	sprite.setPosition(position);
 
@@ -37,5 +39,8 @@ void DrawableGameObject::Draw(RenderWindow & window) {
 }
 
 void DrawableGameObject::Flip() {
-	sprite.setScale(sprite.getScale().x * -1, 1);
+	// sprite.setScale(sprite.getScale().x * -1, sprite.getScale().y);	
+	image.flipHorizontally();
+
+	texture.loadFromImage(image);
 }

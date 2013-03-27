@@ -10,8 +10,8 @@ using namespace std;
 
 class DrawableGameObject : public GameObject {
 	public:
-		DrawableGameObject();
-		DrawableGameObject(string filePath, Vector2f position, int direction);
+		DrawableGameObject(); // default constructor
+		DrawableGameObject(string filePath, Vector2f position, int direction); 
 		DrawableGameObject(Texture & texture, Vector2f* position);
 		virtual ~DrawableGameObject(void);
 
@@ -23,6 +23,7 @@ class DrawableGameObject : public GameObject {
 		bool loaded;
 
 	protected:
+		Image image;
 		Texture texture;
 		int direction; // 0 = left, 1 = right
 };

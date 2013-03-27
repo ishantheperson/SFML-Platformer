@@ -56,6 +56,8 @@ server.on("message", function (messageText, information) {
             });
 
             // broadcast mesage to others
+            // SERVER RESPONSE: sends player COMMAND to ADD NEW CONNECTED PLAYER (VERB == JOINED)
+            // SYNTAX: joined <ID> <X> <Y>
             var broadcastMessage = "joined " + message + " " + currentPlayer.x + " " + currentPlayer.y;
             var broadcastBuffer = createBuffer(broadcastMessage);
 
@@ -80,6 +82,8 @@ server.on("message", function (messageText, information) {
 
             console.log("INFO: Data received from player " + id + " move to " + x + " " + y);
 
+            // SEVER COMMAND MOVE
+            // syntax: move <id> <x> <y>
             var message = "move " + id + " " + x + " " + y;
             var buffer = new Buffer(message.length);
             buffer.write(message);

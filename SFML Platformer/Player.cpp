@@ -16,9 +16,9 @@ Player::Player(const string name, Vector2f position, int direction) {
 	if (!texture.loadFromFile("res/image/" + name)) {
 		cout << "WARNING: could not load image " << name << "\n";
 	}
-	cout << "INFO: Loaded image " << name << "\n";
+	cout << "INFO: Loaded image " << name << endl;
 	this -> sprite.setTexture(texture);
-	this -> sprite.setOrigin(texture.getSize().x / 2, texture.getSize().y / 2);
+	// this -> sprite.setOrigin(texture.getSize().x / 2, texture.getSize().y / 2);
 	this -> sprite.setPosition(position);
 
 	this -> direction = direction;
@@ -181,12 +181,28 @@ void Player::Listen() {
 			vector<string> params;
 			boost::split(params, message, boost::is_any_of(" "));
 			cout << "INFO: Parsed message action: " << params[0] << endl;
+
+#pragma region Handle Server Commands
 			if (params[0] == "add") {
 				// add player
 				cout << "INFO: Calling add() on network player..." << endl;
-				Game::AddNetworkedPlayer(atoi(params[1].c_str()), new DrawableGameObject("player.png", Vector2f(atoi(params[2].c_str()), atoi(params[3].c_str())), RIGHT));
+				// Game::AddNetworkedPlayer(atoi(params[1].c_str()), DrawableGameObject("player.png", Vector2f(atoi(params[2].c_str()), atoi(params[3].c_str())), RIGHT));
 				cout << "INFO: Done calling add()" << endl;
 			}
+
+			else if (params[0] == "joined") {
+				cout << "INFO: Calling add() on network player..." << endl;
+				Game::AddNetworkedPlayer(atoi(params[1].c_str()), DrawableGameObject("player.png", Vector2f(atoi(params[2].c_str()), atoi(params[3].c_str())), RIGHT));
+				cout << "INFO: Done calling add()" << endl;
+			}
+
+			else if (params[0] == "move") {
+				cout << "INFO: Calling move() on network player... " << endl;
+				Game::UpdateNetworkedPlayer(atoi(params[1].c_str()), atoi(params[2].c_str()), atoi(params[3].c_str()));
+				cout << "INFO: Done calling move()" << endl;
+			}
+#pragma endregion
+
 		}
 	}
 }

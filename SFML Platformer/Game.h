@@ -21,18 +21,19 @@ class Game {
 	public:
 		static void Start();
 
-		static void AddNetworkedPlayer(int id, DrawableGameObject* player);
+		static void AddNetworkedPlayer(int id, DrawableGameObject player);
 		static void UpdateNetworkedPlayer(int id, int x, int y);
 
 		static vector<GameObject*> gameObjects;
 		static Player player;
 		static View view;
 
+		static bool IsFocused;
 	private:
 		static void Loop();
 		static void Splash();
 		static RenderWindow gameWindow;
 		static Level level;
-		static map<int, DrawableGameObject*> networkedPlayers;
+		static map<int, DrawableGameObject> networkedPlayers;
 };
 
