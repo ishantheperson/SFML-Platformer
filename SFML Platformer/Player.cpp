@@ -6,20 +6,19 @@
 #define SPEED 2
 
 #define PORT 9000 // this must be the same
-#define LISTEN_PORT 9001 // this can change
-#define ADDRESS "127.0.0.1"
+#define ADDRESS "192.168.1.3"
 #define BUFFER_SIZE 1024
 
-Player::Player(string name, Vector2f position, int direction) {
-	#pragma region Sprite
+Player::Player(const string name, Vector2f position, int direction) {
+#pragma region Sprite
 	Sprite sprite;
-	cout  << "INFO: Created new DrawableGameObject w/ normal constructor" << "\n";
+	cout << "INFO: Created new DrawableGameObject w/ normal constructor" << "\n";
 	if (!texture.loadFromFile("res/image/" + name)) {
-		cout  << "WARNING: could not load image " << name << "\n";
+		cout << "WARNING: could not load image " << name << "\n";
 	}
-	cout  << "INFO: Loaded image " << name << "\n";
+	cout << "INFO: Loaded image " << name << endl;
 	this -> sprite.setTexture(texture);
-	this -> sprite.setOrigin(texture.getSize().x / 2, texture.getSize().y / 2);
+	// this -> sprite.setOrigin(texture.getSize().x / 2, texture.getSize().y / 2);
 	this -> sprite.setPosition(position);
 
 	this -> direction = direction;
@@ -27,49 +26,54 @@ Player::Player(string name, Vector2f position, int direction) {
 
 	this -> lastPosition = position;
 
-	#pragma endregion
+#pragma endregion
 
-	#pragma region Network
+#pragma region Network
 	address = new IpAddress(ADDRESS);
-	this -> socket.setBlocking(true);
-	socket.bind(Socket::AnyPort); // pick a port, any port
-
+	socket = new UdpSocket;
+	socket -> setBlocking(true);
+	cout << "INFO: Binding socket #1" << endl;
+	socket -> bind(Socket::AnyPort); // pick a port, any port
+	cout << "INFO: Bound socket #1 to port " << socket -> getLocalPort() << endl;
 	Packet packet;
 
-	string command = "join " + to_string(sprite.getPosition().x) + " " + to_string(sprite.getPosition().y);
+	this -> name = GetRandomName();
+	string command = "join " + to_string(sprite.getPosition().x) + " " + to_string(sprite.getPosition().y) + " " + name;
 
 	packet.append(command.c_str(), command.size());
-	socket.send(packet, *address, PORT);
+	socket -> send(packet, *address, PORT);
 
 	char response[BUFFER_SIZE];
 	size_t received = 0;
-	unsigned short port;
+	unsigned short receivePort;
 
 	IpAddress sender;
 
-	cout  << "INFO: Receiving message..." << "\n";
-	socket.receive(response, 1024, received, sender, port);
-	cout  << "INFO: Received message." << "\n";
+	cout << "INFO: Receiving message..." << "\n";
+	socket -> receive(response, 1024, received, sender, receivePort);
+	cout << "INFO: Received message." << "\n";
 
 	string message(response, received);
-	cout  << "INFO: Player received message: " << message << "\n";
+	cout << "INFO: Player received message: " << message << "\n";
 	id = atoi(message.c_str());
 
-	// after initial connection do not block
-	
-	// socket.setBlocking(false);
+	unsigned short port = socket -> getLocalPort();
 
-	#pragma endregion
+	thread* listenThread = new thread(&Player::Listen);
+
+#pragma endregion
 }
 
 Player::~Player() {
-	delete address; // remove pointer
+	delete address; // remove pointers
+	delete socket;
+	delete listenThread;
 }
 
 void Player::Update(Level world, View view) {
-	#pragma region Movement
+#pragma region Movement
 	if (Keyboard::isKeyPressed(Keyboard::O)) {
-		cout  << "INFO: Player position X: " << sprite.getPosition().x << " Y: " << sprite.getPosition().y << "\n";
+		cout << "INFO: Player position X: " << sprite.getPosition().x << " Y: " << sprite.getPosition().y << "\n";
 	}
 
 	bool left = Keyboard::isKeyPressed(Keyboard::A);
@@ -91,7 +95,7 @@ void Player::Update(Level world, View view) {
 	groundCollisionRect.height = 2;
 	groundCollisionRect.width -= 10;
 	groundCollisionRect.left += 5;
-	
+
 	if (right && !(world.Collides(rightCollisionRect))) {
 		if (direction == LEFT) {
 			Flip(); 
@@ -102,7 +106,7 @@ void Player::Update(Level world, View view) {
 		}
 		sprite.move(SPEED, 0); 
 	}
-	
+
 	if (left && !(world.Collides(leftCollisionRect))) {
 		if (direction == RIGHT) {
 			Flip();
@@ -142,37 +146,81 @@ void Player::Update(Level world, View view) {
 			velocity = 0;
 		}
 	}
-	#pragma endregion
-	#pragma region Network
+#pragma endregion
+#pragma region Network
 	// send data to server
 	if (lastPosition != sprite.getPosition()) {
-		socket.setBlocking(false);
-		cout  << "Sending data..." << "\n";
 		Packet packet;
-		string command = "move " + to_string(id) + " " + to_string(sprite.getPosition().x) + " " + to_string(sprite.getPosition().y);
+		string command = "move " + to_string(id) + " " + to_string(sprite.getPosition().x) + " " + to_string(sprite.getPosition().y) + " " + name;
 		packet.append(command.c_str(), command.size());
 
-		socket.send(packet, *address, PORT);
-
-		cout  << "Data sent" << "\n";
+		socket -> send(packet, *address, PORT);
 	} // else no data needs to be sent
 
-	#pragma endregion
+#pragma endregion
 
 	lastPosition = sprite.getPosition();
 }
 
 void Player::Listen() {
-	char data[BUFFER_SIZE]; // received data
-	size_t received = 0; // amount we received
-	unsigned short port; // the port it was received from
+	cout << "INFO: Listening!" << endl;
+	while (true) {
+		char data[BUFFER_SIZE]; // received data
+		size_t received = 0; // amount we received
+		unsigned short port; // the port it was received from
 
-	IpAddress sender; // the person who sent the data
-	socket.receive(data, BUFFER_SIZE, received, sender, port); // receive the data
+		IpAddress sender; // the person who sent the data
+		socket -> receive(data, BUFFER_SIZE, received, sender, port); // receive the data
 
-	string message(data, received);
+		string message(data, received);
+
+		if (message.length() > 0) {
+			cout << "INFO: Received message" << endl;
+			// handle message here
+			// 1. split string
+			vector<string> params;
+			boost::split(params, message, boost::is_any_of(" "));
+			cout << "INFO: Parsed message action: " << params[0] << endl;
+
+#pragma region Handle Server Commands
+			if (params[0] == "add") {
+				// add player
+				cout << "INFO: Calling add() on network player..." << endl;
+				// Game::AddNetworkedPlayer(atoi(params[1].c_str()), DrawableGameObject("player.png", Vector2f(atoi(params[2].c_str()), atoi(params[3].c_str())), RIGHT));
+				cout << "INFO: Done calling add()" << endl;
+			}
+
+			else if (params[0] == "joined") {
+				cout << "INFO: Calling add() on network player..." << endl;
+				Game::AddNetworkedPlayer(atoi(params[1].c_str()), DrawableGameObject("player.png", Vector2f(atoi(params[2].c_str()), atoi(params[3].c_str())), RIGHT));
+				cout << "INFO: Done calling add()" << endl;
+			}
+
+			else if (params[0] == "move") {
+				cout << "INFO: Calling move() on network player... " << endl;
+				Game::UpdateNetworkedPlayer(atoi(params[1].c_str()), atoi(params[2].c_str()), atoi(params[3].c_str()));
+				cout << "INFO: Done calling move()" << endl;
+			}
+#pragma endregion
+
+		}
+	}
 }
 
+inline string Player::GetRandomName() {
+	string name = "";
+	static const char alphanum[] =
+		"0123456789"
+		"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+		"abcdefghijklmnopqrstuvwxyz";
+
+	for (int i = 0; i < 5; ++i) {
+		name += alphanum[rand() % (sizeof(alphanum) - 1)];
+	}
+
+	return name;
+
+}
 
 #ifdef _DEBUG
 ostream& operator<< (ostream& stream, const Player& player) {
@@ -180,3 +228,5 @@ ostream& operator<< (ostream& stream, const Player& player) {
 	return stream;
 }
 #endif
+
+UdpSocket* Player::socket;
