@@ -4,15 +4,20 @@
 #include "Game.h"
 
 void Game::Start() {
+	cout << "Setting up video parameters..." << endl;
 	gameWindow.create(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT, 32), WINDOW_TITLE);
 	gameWindow.clear();
 	gameWindow.setFramerateLimit(MAX_FRAMERATE);
 	gameWindow.setView(view);
+	cout << "Set up video paramaters" << endl;
 
 	cout << "Player initialized at X: " << level.startLocation.x << " Y: " << level.startLocation.y << "\n";
 
+	cout << "Creating NetworkedPlayers map..." << endl;
 	NetworkedPlayers* networkedPlayers = new NetworkedPlayers;
+	cout << "Created NetworkedPlayers map" << endl;
 	
+	cout << "Starting game loop..." << endl;
 	Loop();
 
 	// disconnect
@@ -56,7 +61,8 @@ void Game::Loop() {
 
 		// Draw NetworkedPlayers
 		
-		for (map<int, DrawableGameObject>::iterator it = networkedPlayers.begin(); it != networkedPlayers.end(); it++) {
+		for (NetworkedPlayers::iterator it = networkedPlayers -> begin(); it != networkedPlayers -> end(); it++) {
+			cout << "Drawing networked player " << it -> first << endl;
 			(it ->second).Draw(gameWindow);
 		}
 
@@ -70,14 +76,15 @@ void Game::Loop() {
 void Game::AddNetworkedPlayer(int id, DrawableGameObject player) {
 	cout << "INFO: Inserting new networked player..." << endl;
 	// add player
-	networkedPlayers[id] = player;
+	// networkedPlayers[id] = player;
+	networkedPlayers -> insert(pair<int, DrawableGameObject>(id, player));
 	cout << "INFP: Successfully inserted new networked player" << endl;
 }
 
 void Game::UpdateNetworkedPlayer(int id, int x, int y) {
 	cout << "INFO: Updating a networked player..." << endl;
-	// update player
-	networkedPlayers[id].sprite.setPosition(x, y);
+	// todo: update player
+	(*networkedPlayers)[id].sprite.setPosition(x, y); 
 	cout << "INFO: Successfully updates a networked player" << endl;
 }
 
