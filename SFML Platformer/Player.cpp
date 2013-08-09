@@ -76,7 +76,7 @@ Player::~Player() {
 	delete listenThread;
 }
 
-void Player::Update(Level world, View view) {
+void Player::Update(Level& world, View& view) {
 #pragma region Movement
 	if (Keyboard::isKeyPressed(Keyboard::O)) {
 		cout << "INFO: Player position X: " << sprite.getPosition().x << " Y: " << sprite.getPosition().y << "\n";

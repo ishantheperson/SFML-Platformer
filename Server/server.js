@@ -1,6 +1,6 @@
 /// <reference path="./nodelib/node.js">
 
-// Game Server
+// Game Server by Ishan Bhargava for SFML Platformer
 var port = 9000;
 
 var dgram = require('dgram');

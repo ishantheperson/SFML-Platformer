@@ -19,6 +19,8 @@ class DrawableGameObject : public GameObject {
 		virtual void Update();
 
 		void Flip();
+		void SetPosition(float x, float y);
+
 		Sprite sprite;
 		bool loaded;
 

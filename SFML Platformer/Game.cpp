@@ -15,7 +15,7 @@ void Game::Start() {
 	cout << "Player initialized at X: " << level.startLocation.x << " Y: " << level.startLocation.y << "\n";
 
 	cout << "Creating NetworkedPlayers map..." << endl;
-	NetworkedPlayers* networkedPlayers = new NetworkedPlayers;
+	networkedPlayers = new NetworkedPlayers;
 	cout << "Created NetworkedPlayers map" << endl;
 	
 	cout << "Starting game loop..." << endl;
@@ -61,9 +61,7 @@ void Game::Loop() {
 		}
 
 		// Draw NetworkedPlayers
-		
 		for (NetworkedPlayers::iterator it = networkedPlayers -> begin(); it != networkedPlayers -> end(); it++) {
-			cout << "Drawing networked player " << it -> first << endl;
 			(it ->second).Draw(gameWindow);
 		}
 
@@ -85,7 +83,7 @@ void Game::AddNetworkedPlayer(int id, DrawableGameObject player) {
 void Game::UpdateNetworkedPlayer(int id, int x, int y) {
 	cout << "INFO: Updating a networked player..." << endl;
 	// todo: update player
-	(*networkedPlayers)[id].sprite.setPosition(x, y); 
+	(*networkedPlayers)[id].SetPosition(x, y); 
 	cout << "INFO: Successfully updates a networked player" << endl;
 }
 

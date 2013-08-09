@@ -17,7 +17,7 @@ class Player : public DrawableGameObject
 		Player (string name, Vector2f position, int direction);
 		virtual ~Player();
 
-		void Update(Level level, View view);
+		void Update(Level& level, View& view);
 		void Disconnect();
 
 		friend ostream& operator<<(ostream& stream, const Player& player);

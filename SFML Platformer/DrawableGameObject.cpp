@@ -8,7 +8,7 @@ DrawableGameObject::DrawableGameObject() {
 }
 
 DrawableGameObject::DrawableGameObject(string name, Vector2f position = Vector2f(0, 0), int direction = 1) {
-	if (!texture.loadFromFile("res/image/" + name)) {
+	if (!image.loadFromFile("res/image/" + name)) {
 		cout  << "WARNING: could not load image " << name << "\n";
 	}
 
@@ -41,4 +41,8 @@ void DrawableGameObject::Draw(RenderWindow & window) {
 void DrawableGameObject::Flip() {
 	sprite.setOrigin(sprite.getTextureRect().width / 2, sprite.getTextureRect().height / 2);
 	sprite.scale(-1, 1);
+}
+
+void DrawableGameObject::SetPosition(float x, float y) {
+	sprite.setPosition(x, y);
 }

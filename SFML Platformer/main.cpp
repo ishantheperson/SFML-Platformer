@@ -1,4 +1,8 @@
-// main.cpp : Defines the entry point for the application.
+/* SFML Platformer Game
+ * By Ishan Bhargava
+ * Will probably not corrupt any memory (probably)
+ * Please sign waiver before using
+ */
 
 #include "stdafx.h"
 
