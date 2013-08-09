@@ -1,13 +1,14 @@
 #include "stdafx.h"
 #include "Player.h"
 
+// TODO: Move these to an actual configration file (maybe serverside?)
 #define GRAVITY 5
 #define JUMP_HEIGHT 20
 #define SPEED 2
 
 #define PORT 9000 // this must be the same
 
-#define ADDRESS "127.0.0.1"
+#define ADDRESS "localhost"
 #define BUFFER_SIZE 1024
 
 Player::Player(const string name, Vector2f position, int direction) {
@@ -188,6 +189,8 @@ void Player::Listen() {
 				// add player
 				cout << "INFO: Calling add() on network player..." << endl;
 				// Game::AddNetworkedPlayer(atoi(params[1].c_str()), DrawableGameObject("player.png", Vector2f(atoi(params[2].c_str()), atoi(params[3].c_str())), RIGHT));
+				Game::AddNetworkedPlayer(0, *(new DrawableGameObject("player.png", Vector2f(10, 10), RIGHT)));
+
 				cout << "INFO: Done calling add()" << endl;
 			}
 
@@ -199,7 +202,10 @@ void Player::Listen() {
 
 			else if (params[0] == "move") {
 				cout << "INFO: Calling move() on network player... " << endl;
-				Game::UpdateNetworkedPlayer(atoi(params[1].c_str()), atoi(params[2].c_str()), atoi(params[3].c_str()));
+				int id = atoi(params[1].c_str());
+				int x = atoi(params[2].c_str());
+				int y = atoi(params[3].c_str());
+				Game::UpdateNetworkedPlayer(id, x, y);
 				cout << "INFO: Done calling move()" << endl;
 			}
 #pragma endregion

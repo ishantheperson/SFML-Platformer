@@ -39,8 +39,6 @@ void DrawableGameObject::Draw(RenderWindow & window) {
 }
 
 void DrawableGameObject::Flip() {
-	// sprite.setScale(sprite.getScale().x * -1, sprite.getScale().y);	
-	image.flipHorizontally();
-
-	texture.loadFromImage(image);
+	sprite.setOrigin(sprite.getTextureRect().width / 2, sprite.getTextureRect().height / 2);
+	sprite.scale(-1, 1);
 }

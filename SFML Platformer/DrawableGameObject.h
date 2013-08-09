@@ -25,6 +25,7 @@ class DrawableGameObject : public GameObject {
 	protected:
 		Image image;
 		Texture texture;
+		IntRect oldFlipRect;
 		int direction; // 0 = left, 1 = right
 };
 

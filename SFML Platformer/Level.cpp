@@ -27,25 +27,25 @@ void Level::InitializeBlocks() {
 	for (unsigned int x = 0; x < level.getSize().x; x++) {
 		for (unsigned int y = 0; y < level.getSize().y; y++) {
 			Color pixel = level.getPixel(x, y);
-#ifdef _DEBUG
+#ifdef LEVEL_DEBUG
 			cout  << "INFO: Scanning block at X:" << x << " Y: " << y << "\n";
 #endif
 			if (pixel == AIR) {
-#ifdef _DEBUG
+#ifdef LEVEL_DEBUG
 				cout  << "INFO: Found air block at X:" << x << " Y: " << y << "\n";
 #endif
 				blocks.push_back(new DrawableGameObject);
 				airAmount += 1;	
 			}
 			else if (pixel == GRASS) {
-#ifdef _DEBUG
+#ifdef LEVEL_DEBUG
 				cout  << "INFO: Found grass block at X:" << x << " Y: " << y << "\n";
 #endif
 				blocks.push_back(new DrawableGameObject(grass, new Vector2f(x * 100, y * 100)));
 				grassAmount += 1;
 			}
 			else if (pixel == DIRT) {
-#ifdef _DEBUG
+#ifdef LEVEL_DEBUG
 				cout  << "INFO: Found dirt block at X:" << x << " Y: " << y << "\n";
 #endif
 				blocks.push_back(new DrawableGameObject(dirt, new Vector2f(x * 100, y * 100)));
@@ -53,7 +53,7 @@ void Level::InitializeBlocks() {
 			}
 			else if (pixel == PLAYER_START) {
 				blocks.push_back(new DrawableGameObject);
-#ifdef _DEBUG
+#ifdef LEVEL_DEBUG
 				cout  << "INFO: Found level start at X:" << x << " Y: " << y << "\n";
 
 #endif

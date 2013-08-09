@@ -52,6 +52,7 @@ server.on("message", function (messageText, information) {
                     // SERVER RESPONSE: sends player COMMAND to ADD NEW PlAYER (VERB == ADD)
                     // SYNTAX: add <ID> <X> <Y>
                     var buffer = createBuffer("add " + player.id + " " + player.x + " " + player.y);
+                    console.log("INFO: Sending message " + buffer.toString());
                     server.send(buffer, 0, buffer.length, information.port, information.address);
                 }
             });

@@ -11,6 +11,8 @@ void Game::Start() {
 
 	cout << "Player initialized at X: " << level.startLocation.x << " Y: " << level.startLocation.y << "\n";
 
+	NetworkedPlayers* networkedPlayers = new NetworkedPlayers;
+	
 	Loop();
 
 	// disconnect
@@ -19,13 +21,11 @@ void Game::Start() {
 }
 
 void Game::Loop() {
-	Event event;
-
-	// networkedPlayers = NetworkedPlayers();
+	Event event; // this isn't really necessary but SFML says use it
 
 	while (gameWindow.isOpen()) {
 		while (gameWindow.pollEvent(event)) {
-			// handle events BEFORE drawing
+			// handle events BEFORE drawing for an unlaggy gameplay experience !
 			switch (event.type) {
 				case Event::EventType::Closed:
 					gameWindow.close();
@@ -39,7 +39,7 @@ void Game::Loop() {
 			}
 		}
 		gameWindow.clear();
-		gameWindow.setView(view);
+		gameWindow.setView(view); // i actually made this work
 
 		if (IsFocused) {
 			player.Update(level, view);
@@ -57,7 +57,7 @@ void Game::Loop() {
 		// Draw NetworkedPlayers
 		
 		for (map<int, DrawableGameObject>::iterator it = networkedPlayers.begin(); it != networkedPlayers.end(); it++) {
-			it -> second.Draw(gameWindow);
+			(it ->second).Draw(gameWindow);
 		}
 
 		level.Draw(gameWindow);
@@ -90,6 +90,6 @@ vector<GameObject*> Game::gameObjects;
 Level Game::level("scrolling.png");
 View Game::view(FloatRect(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT));
 
-map<int, DrawableGameObject> Game::networkedPlayers;
+NetworkedPlayers* Game::networkedPlayers;
 
 bool Game::IsFocused;
