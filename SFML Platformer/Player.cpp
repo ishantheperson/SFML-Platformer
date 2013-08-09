@@ -191,7 +191,7 @@ void Player::Listen() {
 #pragma region Handle Server Commands
 			if (params[0] == "add") {
 				// add player
-				cout << "INFO: Calling add() on network player..." << endl;
+				cout << "INFO: Calling add() on network player... (string add)" << endl;
 				// Game::AddNetworkedPlayer(atoi(params[1].c_str()), DrawableGameObject("player.png", Vector2f(atoi(params[2].c_str()), atoi(params[3].c_str())), RIGHT));
 				Game::AddNetworkedPlayer(0, *(new DrawableGameObject("player.png", Vector2f(10, 10), RIGHT)));
 
@@ -199,7 +199,7 @@ void Player::Listen() {
 			}
 
 			else if (params[0] == "joined") {
-				cout << "INFO: Calling add() on network player..." << endl;
+				cout << "INFO: Calling add() on network player... (string joined)" << endl;
 				Game::AddNetworkedPlayer(atoi(params[1].c_str()), DrawableGameObject("player.png", Vector2f(atoi(params[2].c_str()), atoi(params[3].c_str())), RIGHT));
 				cout << "INFO: Done calling add()" << endl;
 			}

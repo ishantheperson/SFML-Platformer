@@ -22,7 +22,7 @@ DrawableGameObject::DrawableGameObject(string name, Vector2f position = Vector2f
 
 DrawableGameObject::DrawableGameObject(Texture & texture, Vector2f* position) {
 	this -> texture = texture;	
-	sprite.setTexture(texture);
+	sprite.setTexture(this -> texture);
 	sprite.setPosition(position -> x, position -> y);
 	
 	loaded = true;
