@@ -4,6 +4,7 @@
 #include "Game.h"
 
 void Game::Start() {
+	IsFocused = true;
 	cout << "Setting up video parameters..." << endl;
 	gameWindow.create(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT, 32), WINDOW_TITLE);
 	gameWindow.clear();
@@ -44,9 +45,9 @@ void Game::Loop() {
 			}
 		}
 		gameWindow.clear();
-		gameWindow.setView(view); // i actually made this work
+		gameWindow.setView(view);
 
-		if (IsFocused) {
+		if (IsFocused) { 
 			player.Update(level, view);
 		}
 		player.Draw(gameWindow);

@@ -13,8 +13,9 @@
 
 Player::Player(const string name, Vector2f position, int direction) {
 #pragma region Sprite
-	Sprite sprite;
 	cout << "INFO: Created new DrawableGameObject w/ normal constructor" << "\n";
+	Sprite sprite;
+
 	if (!texture.loadFromFile("res/image/" + name)) {
 		cout << "WARNING: could not load image " << name << "\n";
 	}
@@ -37,12 +38,15 @@ Player::Player(const string name, Vector2f position, int direction) {
 	cout << "INFO: Binding socket #1" << endl;
 	socket -> bind(Socket::AnyPort); // pick a port, any port
 	cout << "INFO: Bound socket #1 to port " << socket -> getLocalPort() << endl;
-	Packet packet;
 
+	cout << "INFO: Creating join request packet..." << endl;
+	Packet packet;
 	this -> name = GetRandomName();
 	string command = "join " + to_string(sprite.getPosition().x) + " " + to_string(sprite.getPosition().y) + " " + name;
 
 	packet.append(command.c_str(), command.size());
+	cout << "INFO: Packet created" << endl;
+	cout << "INFO: Sending join request..." << endl;
 	socket -> send(packet, *address, PORT);
 
 	char response[BUFFER_SIZE];
